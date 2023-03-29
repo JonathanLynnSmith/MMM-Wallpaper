@@ -8,7 +8,7 @@ const crypto = require("crypto");
 const http = require("http");
 const https = require("https");
 const Flickr = require("flickr-sdk");
-const fetch = require("fetch");
+const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
 function shuffle(a) {
   var source = a.slice(0);
