@@ -143,6 +143,11 @@ Module.register("MMM-Wallpaper", {
       element.style.opacity = 1;
       self.title.style.display = "none";
 
+      elements = document.getElementsByClassName("crossfade-image")
+      if(elements.length !== 1 ){
+        document.getElementsByClassName("crossfade-image")[0].style.opacity = 0
+      }
+
       setTimeout(() => {
         var caption = imageData.caption;
         if (self.config.caption && caption) {
